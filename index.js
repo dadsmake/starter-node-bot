@@ -41,8 +41,8 @@ controller.hears(['hello', 'hi'], ['direct_message'], function (bot, message) {
 })
 
 controller.hears('.*', ['mention'], function (bot, message) {
-//  bot.reply(message, 'You really do care about me. :heart:')
-  bot.reply(message, 'Hi <@' + message.user + '>, Good to hear from you, why don\'t you try asking where I am at? \n')
+  bot.reply(message, 'You really do care about me. :heart:')
+//  bot.reply(message, 'Hi <@' + message.user + '>, Good to hear from you, why don\'t you try asking where I am at? \n')
 })
 
 controller.hears('help', ['direct_message', 'direct_mention'], function (bot, message) {
