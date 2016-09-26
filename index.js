@@ -72,6 +72,25 @@ controller.hears(['attachment'], ['direct_message', 'direct_mention'], function 
   })
 })
 
+controller.hears(['where'], ['direct_message', 'direct_mention'], function (bot, message) {
+  var text = 'Find out how you can gain conversational control over all of your assets at www.solatrax.com.'
+  var attachments = [{
+    fallback: text,
+    pretext: 'Let me find that for you. :sunglasses: :thumbsup:',
+    title: 'My location is:.',
+    image_url: 'http://www.solatrax.com/wp-content/uploads/2015/03/SolaTrax-In-Use.jpg',
+    title_link: 'www.solatrax.com',
+    text: text,
+    color: '#7CD197'
+  }]
+
+  bot.reply(message, {
+    attachments: attachments
+  }, function (err, resp) {
+    console.log(err, resp)
+  })
+})
+
 controller.hears('.*', ['direct_message', 'direct_mention'], function (bot, message) {
   bot.reply(message, 'Sorry <@' + message.user + '>, I don\'t understand. \n')
 })
